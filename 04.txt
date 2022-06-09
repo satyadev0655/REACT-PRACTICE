@@ -1,0 +1,77 @@
+Ex#1
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import './App.css';
+
+class ProfileComp extends React.Component {
+  render() {
+    return <h1> Hello</h1>;
+  }
+}
+
+ReactDOM.render(<ProfileComp />, document.getElementById('root'));
+
+
+Ex#2
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import './App.css';
+
+class ProfileComp extends React.Component {
+  render() {
+    return <h1> Hello {this.props.name}</h1>;
+  }
+}
+
+ReactDOM.render(<ProfileComp name="Alex" />, document.getElementById('root'));
+
+
+Ex#3
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import './App.css';
+
+class ProfileComp extends React.Component {
+  constructor() {
+    super();
+    this.name = 'Alex';
+  }
+
+  render() {
+    return <h1> Hello {this.name}</h1>;
+  }
+}
+
+ReactDOM.render(<ProfileComp />, document.getElementById('root'));
+
+
+//Ex3 - TODO
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import './App.css';
+
+class ProfileComp extends React.Component {
+  constructor() {
+    super();
+    this.name = 'Alex';
+  }
+
+  updateFun() {
+    this.setState({
+      name: "Benn",
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <h1> Hello {this.name}</h1>
+        <a onClick={this.updateFun}>Update</a>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<ProfileComp />, document.getElementById('root'));
+
+
