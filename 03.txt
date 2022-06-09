@@ -1,0 +1,36 @@
+index.js
+---
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './App.css';
+
+function ProfileComp(props) {
+  return (
+    <div>
+      <div className="card">
+        <h1>{props.name}</h1>
+        <p>{props.email}</p>
+      </div>
+    </div>
+  );
+}
+
+const ele = <ProfileComp name="Alex" email="alex@test.com" />;
+const ele1 = <ProfileComp name="Benn" email="benn@test.com" />;
+
+const finalEle = (
+  <div>
+    {ele} {ele1}
+  </div>
+);
+
+ReactDOM.render(finalEle, document.getElementById('root'));
+
+
+App.css
+--
+.card {
+  border: 3px solid #1c6ea4;
+  margin: 5px;
+  padding: 5px;
+}
