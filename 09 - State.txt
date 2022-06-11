@@ -1,0 +1,60 @@
+//Ex1 Props - Readonly
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import './App.css';
+
+class Profile extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return <div> Name: <input type="text" value={this.props.name} /></div>;
+  }
+}
+
+const element = (
+  <div>
+    {' '}
+    <Profile name="Alex" />
+  </div>
+);
+
+ReactDOM.render(element, document.getElementById('root'));
+
+
+
+// Ex2
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import './App.css';
+
+class Profile extends React.Component {
+  state = { sname: this.props.name };
+  constructor(props) {
+    super(props);
+  }
+
+  updateProfile = () => {
+    this.setState({sname: this.refs.Sname.value});
+  };
+
+  render() {
+    return (
+      <div>
+        {' '}
+        Name: <input type="text" defaultValue={this.state.sname} ref="Sname" /> <br />
+        <p>Updated Value {this.state.sname}</p>
+        <button onClick={this.updateProfile}> Update </button>
+      </div>
+    );
+  }
+}
+
+const element = (
+  <div>
+    {' '}
+    <Profile name="Alex" />
+  </div>
+);
+
+ReactDOM.render(element, document.getElementById('root'));
