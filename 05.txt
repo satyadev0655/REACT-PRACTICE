@@ -1,0 +1,72 @@
+Ex1 : React Elements
+index.js
+----
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './App.css';
+
+const element = React.createElement('h1', {className: "heading"}, 'hello react');
+
+ReactDOM.render(element, document.getElementById('root'));
+
+App.css
+--
+
+.heading {
+  color: red;
+}
+
+
+
+Ex2
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './App.css';
+
+const element = React.createElement('h1', {className: "heading"}, 'hello react');
+
+const e1 = <p> JavaScript</p>
+const e2 = React.createElement('p', null, 'React');
+
+const e3 = React.createElement('ol', null, 
+React.createElement('li',null,'HTML'),
+React.createElement('li',null,'CSS')
+);
+
+const e4 = <div>
+<ol>
+  <li>HTML</li>
+  <li>CSS3 </li>
+  </ol>
+</div>;
+
+ReactDOM.render(e4, document.getElementById('root'));
+
+
+
+Ex3
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './App.css';
+
+const element = React.createElement('h1', {className: "heading"}, 'hello react');
+
+const e1 = <p> JavaScript</p>
+const e2 = React.createElement('p', null, 'React');
+
+const e3 = React.createElement('ol', null, 
+React.createElement('li',null,'HTML'),
+React.createElement('li',null,'CSS')
+);
+
+const e4 = <div>
+<ol>
+  <li>HTML</li>
+  <li>CSS3 </li>
+  </ol>
+</div>;
+
+const finalElements  = <div>
+  {e1} {e2} {e3} {e4}  </div>
+
+ReactDOM.render(finalElements, document.getElementById('root'));
