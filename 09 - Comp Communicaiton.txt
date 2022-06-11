@@ -1,0 +1,67 @@
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import './App.css';
+
+//Parent Comp
+class RestList extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        {/*TODO Rest Array List  */}
+        <RestInfo name={this.props.name} />
+      </div>
+    );
+  }
+}
+
+//Child Comp
+class RestInfo extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>{this.props.name}</h1>
+      </div>
+    );
+  }
+}
+
+class RestMenu extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>Menus</h1>
+      </div>
+    );
+  }
+}
+
+class CheckOut extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>Checkout</h1>
+      </div>
+    );
+  }
+}
+
+
+const element = (
+  <div>
+    <RestList name="ABC Rest" />
+  </div>
+);
+
+ReactDOM.render(element, document.getElementById('root'));
