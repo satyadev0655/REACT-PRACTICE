@@ -1,0 +1,33 @@
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import './App.css';
+
+class Emp extends React.Component{
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return <div>
+      Name: {this.props.name}
+      <Dept deptname={this.props.deptname}/>
+      
+      </div>;
+  }
+}
+
+class Dept extends React.Component{
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return <div> Dept: {this.props.deptname}</div>;
+  }
+}
+
+const element = (
+  <div>
+    <Emp name="Alex" deptname="HR"/>
+  </div>
+);
+
+ReactDOM.render(element, document.getElementById('root'));
