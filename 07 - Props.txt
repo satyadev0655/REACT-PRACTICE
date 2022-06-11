@@ -1,0 +1,37 @@
+//Function Comp
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import './App.css';
+
+function Profile(props) {
+return (
+  <div> Name: {props.name}</div>
+);
+
+}
+
+const element = <div> <Profile name="Alex"/></div>;
+
+ReactDOM.render(element, document.getElementById('root'));
+
+
+//Class Comp
+
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import './App.css';
+
+class Profile extends React.Component {
+  render(){
+    return <div> Name: {this.props.name}</div>;
+  }
+}
+
+const element = (
+  <div>
+    {' '}
+    <Profile name="Alex" />
+  </div>
+);
+
+ReactDOM.render(element, document.getElementById('root'));
