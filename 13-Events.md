@@ -23,3 +23,25 @@ const element = <Test/>
 
 ReactDOM.render(element, document.getElementById('root'));
 ```
+
+
+Ex2: Passing arguments
+```
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+
+
+function Test(){ //Test Component
+    const hello = (msg) => { //arrow fun
+        alert(msg);
+    }
+
+    return <>
+    <button onClick={()=>hello("heloworld")}>Hello</button>
+    </>;
+
+}
+const element = <Test/>
+
+ReactDOM.render(element, document.getElementById('root'));
+```
