@@ -58,3 +58,44 @@ const element = (
 );
 
 ReactDOM.render(element, document.getElementById('root'));
+
+
+
+//Ex-2
+```
+import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
+
+
+function Example() {
+  // Declare a new state variable, which we'll call "count"
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [address, setAddress] = useState("");
+
+  const changeCName = (e) =>{
+    console.log(e.target.value);
+    setName(e.target.value)
+  }
+
+  return <>
+  Name : {name}
+
+        <form onSubmit={(e) => {formSubmit(e)}}>
+            <label>Company Name</label>
+            <input type="text" name="cname" onChange={changeCName}/> <br/>
+
+            <label>Company Email</label>
+            <input type="text" name="cemail"/> <br/>
+
+            <label>Company Address</label>
+            <input type="text" name="caddres"/> <br/>
+            <input type="submit" value="Save"/>
+        </form>
+    </>;
+}
+const element = <Example/>
+
+ReactDOM.render(element, document.getElementById('root'));
+```
+
