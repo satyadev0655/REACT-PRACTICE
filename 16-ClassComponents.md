@@ -99,3 +99,56 @@ const element = <A pname="Benn"/>;
 ReactDOM.render(element, document.getElementById('root'));
 ```
 
+
+Ex-3 Unmount
+
+import React, { useState, useEffect } from 'react';
+import ReactDOM from 'react-dom';
+
+class PopupWindow extends React.Component{
+  componentWillUnmount(){
+    console.log("componentWillUnmount called");
+  }
+  render(){
+    return(
+    <>
+    <h1>Popup Window</h1>
+    </>
+    );
+  }
+}
+class DisplayList extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {showPopupFlag : false};
+  }
+
+  showPopup = () => {
+    this.setState({showPopupFlag : true})
+  }
+
+  hidePopup = () => {
+    this.setState({showPopupFlag : false})
+  }
+
+  
+  render(){
+    let pElement;
+    if(this.state.showPopupFlag){
+      pElement = <PopupWindow/>
+    }
+
+    return(
+    <>
+    {pElement}
+    <button onClick={this.showPopup}>Show Popup</button>
+    <button onClick={this.hidePopup}>Hide Popup</button>
+
+    </>
+    );
+  }
+}
+
+const element = <DisplayList/>;
+ReactDOM.render(element, document.getElementById('root'));
+
